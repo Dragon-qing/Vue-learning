@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="../vue.js/vue.js"></script>
+    <script></script>
+  </head>
+  <body>
+    <div id="app">
+        <h3 v-on:click="xd">点击</h3>
+        <a href="https://www.bilibil.com" v-on:click="">哔哩哔哩</a>
+        <div @click="xd">
+            <span @click.stop="xd">alert</span>
+        </div>
+        <div>键盘事件<input type="text" @keyup.enter="change"></div>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data:{
+                message:'Hello World',
+            },
+            methods:{
+                xd(text){
+                    // text.stopPropagation();
+                    alert(text.target.innerText);
+                },
+                pre(e){
+                    e.preventDefault();
+                },
+                change(e){
+                    console.log(e.target.value);
+                },
+            },
+        });
+        
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <script src="../vue.js/vue.js"></script>
+    <style>
+        .bg_a{
+            background-color: red;
+        }
+        .bg_b{
+            background-color: blue;
+        }
+        .bg{
+            background-color: grey;
+        }
+        .fs{
+            font-size: 50px;
+        }
+        .fc{
+            color:green;
+        }
+    </style>
+</head>
+<body>
+    <!-- 字符串写法 -->
+    <!-- <div id = 'app' :class="bg" @click = 'change'>
+        {{message}}
+    </div> -->
+    <!-- 对象写法 -->
+    <!-- <div id = 'app' :class="obj">
+        {{message}}
+    </div> -->
+    <!-- 数组写法 -->
+    <div id = 'app' :class="list">
+        {{message}}
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                message: '测试',
+                bg: "bg_a",
+                obj: {bg_a:true, fs:true},
+                list: ['bg','fs','fc']
+                    
+            },
+            methods: {
+                change(){
+                    if('bg_a'===this.bg){
+                        this.bg = 'bg_b';
+                    }else{
+                        this.bg = 'bg_a';
+                    }
+
+                },
+            },
+        });
+    </script>
+</body>
+</html>
